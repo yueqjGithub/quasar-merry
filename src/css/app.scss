@@ -1,0 +1,169 @@
+// app global css in SCSS form
+html{
+  font-size: 625%;
+}
+.font-12{font-size: .12rem;}
+.font-14{font-size: .14rem;}
+.font-15{font-size: .15rem;}
+.font-16{font-size: .16rem;}
+.font-18{font-size: .18rem;}
+.font-20{font-size: .2rem;}
+.font-22{font-size: .22rem;}
+.font-24{font-size: .24rem;}
+.font-26{font-size: .26rem;}
+.font-28{font-size: .27rem;}
+.font-30{font-size: .3rem;}
+.flex-row{display: flex;flex-direction: row;}
+.flex-row-reverse{display: flex;flex-direction: row-reverse;}
+.flex-col{display: flex;flex-direction: column;}
+.flex-col-reverse{display: flex;flex-direction: column-reverse;}
+.flex-jst-start{justify-content: flex-start;}
+.flex-jst-end{justify-content: flex-end;}
+.flex-jst-center{justify-content: center;}
+.flex-jst-btw{justify-content: space-between;}
+.flex-jst-ard{justify-content: space-around;}
+.flex-ali-start{align-items: flex-start;}
+.flex-ali-end{align-items: flex-end;}
+.flex-ali-center{align-items: center;}
+.flex-ali-base{align-items: baseline;}
+.flex-ali-stretch{align-items: stretch;}
+.self-stretch{align-self: stretch;}
+.flex-1{flex:1;}
+.flex-2{flex:2;}
+.flex-3{flex:3;}
+.flex-4{flex:4;}
+.flex-wrap{flex-wrap: wrap;}
+.flex-nowrap{flex-wrap: nowrap;}
+.width-50{
+  width: 50%;
+}
+.width-60{
+  width: 60%;
+}
+.width-80{width: 80%;}
+.ma-row-md{
+  margin-top: 16px;
+  margin-bottom: 16px;
+}
+.full-page{
+  width: 100vw;
+  height: 100vh;
+}
+
+.ani-delay-1s{
+  animation-delay: 1s;
+}
+.ani-delay-2s{
+  animation-delay: 2s;
+}
+.ani-delay-3s{
+  animation-delay: 3s;
+}
+.ani-delay-4s{
+  animation-delay: 4s;
+}
+.ani-duration-05s{
+  animation-duration: 0.5s;
+}
+.ani-duration-1s{
+  animation-duration: 1s;
+}
+.ani-duration-15s{
+  animation-duration: 1.5s;
+}
+.ani-duration-2s{
+  animation-duration: 2s;
+}
+//cus-ani
+.cus-ani-zoomIn{
+  animation-name: cusAniZoomIn;
+  animation-fill-mode: forwards;
+  opacity: 0;
+}
+@keyframes cusAniZoomIn {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+.cus-ani-slideLeftIn{
+  opacity: 0;
+  animation-name: cusAniSlideLeftIn;
+  animation-fill-mode: forwards;
+}
+@keyframes cusAniSlideLeftIn {
+  from {
+    transform: translate(-50%,0);
+  }
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+.cus-ani-slideRightIn{
+  opacity: 0;
+  animation-name: cusAniSlideRightIn;
+  animation-fill-mode: forwards;
+}
+@keyframes cusAniSlideRightIn {
+  from {
+    transform: translate(50%,0);
+  }
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+.cus-ani-slideTopIn{
+  opacity: 0;
+  animation-name: cusAniSlideTopIn;
+  animation-fill-mode: forwards;
+}
+@keyframes cusAniSlideTopIn {
+  from {
+    transform: translate(0,50%);
+  }
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+.cus-ani-rotateIn{
+  opacity: 0;
+  animation-name: cusAniRotateIn;
+  animation-fill-mode: forwards;
+}
+@keyframes cusAniRotateIn {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+    opacity: 1;
+  }
+}
+.cus-ani-bounceIn{
+  opacity: 0;
+  animation-name: cusAniBounceIn;
+  animation-fill-mode: forwards;
+}
+@keyframes cusAniBounceIn {
+  0% {
+    transform: scale(.7);
+  }
+  25% {
+    transform: scale(.9);
+    opacity: .5;
+  }
+  75% {
+    transform: scale(.6);
+    opacity: .75;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
