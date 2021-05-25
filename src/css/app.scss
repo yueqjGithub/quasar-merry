@@ -34,6 +34,9 @@ html{
 .flex-4{flex:4;}
 .flex-wrap{flex-wrap: wrap;}
 .flex-nowrap{flex-wrap: nowrap;}
+.text-sj{color: rgba(255,255,255,.8);text-shadow: aliceblue;}
+.width-30{width: 30%;}
+.width-40{width: 40%;}
 .width-50{
   width: 50%;
 }
@@ -49,9 +52,17 @@ html{
   width: 100vw;
   height: 100vh;
 }
-
+.page-container{
+  background: #fefaee;
+}
+.page-hidden{
+  overflow: hidden;
+}
 .ani-delay-1s{
   animation-delay: 1s;
+}
+.ani-delay-15s{
+  animation-delay: 1.5s;
 }
 .ani-delay-2s{
   animation-delay: 2s;
@@ -61,6 +72,9 @@ html{
 }
 .ani-delay-4s{
   animation-delay: 4s;
+}
+.ani-duration-02s{
+  animation-duration: 0.2s;
 }
 .ani-duration-05s{
   animation-duration: 0.5s;
@@ -124,6 +138,20 @@ html{
 }
 @keyframes cusAniSlideTopIn {
   from {
+    transform: translate(0,-50%);
+  }
+  to {
+    transform: translate(0, 0);
+    opacity: 1;
+  }
+}
+.cus-ani-slideBottomIn{
+  opacity: 0;
+  animation-name: cusAniSlideBottomIn;
+  animation-fill-mode: forwards;
+}
+@keyframes cusAniSlideBottomIn {
+  from {
     transform: translate(0,50%);
   }
   to {
@@ -165,5 +193,65 @@ html{
   100% {
     transform: scale(1);
     opacity: 1;
+  }
+}
+.cus-ani-slideLoop{
+  animation-name: cusAniSlideLoop;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes cusAniSlideLoop {
+  0% {
+    transform: translate(0, 0);
+  }
+  25%{
+    transform: translate(-25%, 0);
+  }
+  50%{
+    transform: translate(0, 0);
+  }
+  75%{
+    transform: translate(25%, 0);
+  }
+  100%{
+    transform: translate(0, 0);
+  }
+}
+.cus-ani-rotateX{
+  opacity: 0;
+  animation-name: cusAniRotateX;
+  animation-fill-mode: forwards;
+}
+@keyframes cusAniRotateX {
+  from {
+    transform: rotateX(-90deg);
+  }
+  to {
+    transform: rotateX(0deg);
+    opacity: 1;
+  }
+}
+.cus-ani-scaleLoop{
+  animation-name: cusAniScaleLoop;
+  animation-duration: 10s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes cusAniScaleLoop {
+  0%{
+    transform: scale(1);
+  }
+  25%{
+    transform: scale(1.1);
+  }
+  50%{
+    transform: scale(1);
+  }
+  75%{
+    transform: scale(.9);
+  }
+  100%{
+    transform: scale(1);
   }
 }

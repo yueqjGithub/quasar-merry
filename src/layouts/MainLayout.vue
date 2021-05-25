@@ -15,6 +15,7 @@
 
 <script>
 import { mapMutations } from 'vuex'
+import urls from '../api/urls'
 export default {
   name: 'MainLayout',
   data () {
@@ -29,11 +30,8 @@ export default {
     async queryInfo (number) {
       const vm = this
       // https://qtapi.apiself.com/v1/api/public
-      const url = '/api/formwork'
       try {
-        const res = await vm.$axios.get(url, {
-          params: { number: number }
-        })
+        const res = await vm.$httpGet(urls.queryIndex, { number: number })
         vm.setImgList(res.data.data.checkImgs)
         vm.setInfo(res.data.data.configjson)
       } catch (err) {
@@ -55,7 +53,7 @@ export default {
       }
     },
     getUrlKey () {
-      const query = window.location.hash
+      const query = window.location.search
       if (query.includes('?')) {
         const arr = query.split('?')[1].split('&')
         const param = {}
@@ -64,10 +62,15 @@ export default {
           param[prr[0]] = prr[1]
         })
         // id, number
+        window.localStorage.setItem('urlKey', JSON.stringify(param))
         this.setModule(param)
       } else {
-        const param = { id: '1', number: '1' }
-        this.setModule(param)
+        const param = window.localStorage.getItem('urlKey') ? JSON.parse(window.localStorage.getItem('urlKey')) : null
+        if (param) {
+          this.setModule(param)
+        } else {
+          alert('参数不合法')
+        }
       }
     }
   }
