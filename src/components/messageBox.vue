@@ -7,10 +7,16 @@
       mode="out-in"
     >
       <div class="full-width message-item flex-row flex-jst-start flex-ali-center" v-if="show" :key="1">
-        {{curMessage}}
+        <q-avatar>
+          <img :src="curMessage.headimgurl">
+        </q-avatar>
+        <p class="font-14 text-white">{{curMessage.content}}</p>
       </div>
       <div class="full-width message-item flex-row flex-jst-start flex-ali-center" v-else :key="2">
-        {{nextMessage}}
+        <q-avatar>
+          <img :src="nextMessage.headimgurl">
+        </q-avatar>
+        <p class="font-14 text-white">{{nextMessage.content}}</p>
       </div>
     </transition>
   </div>
@@ -37,10 +43,10 @@ export default {
       return this.messageList.length
     },
     curMessage () {
-      return this.messageList[this.cur].slice(0, 15)
+      return this.messageList[this.cur] && this.messageList[this.cur].slice(0, 15)
     },
     nextMessage () {
-      return this.messageList[this.next].slice(0, 15)
+      return this.messageList[this.next] && this.messageList[this.next].slice(0, 15)
     }
   },
   mounted () {
@@ -66,7 +72,7 @@ export default {
             vm.next = 1
           }
         }
-      }, 2000)
+      }, 4000)
     }
   }
 }

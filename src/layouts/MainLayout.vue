@@ -12,7 +12,7 @@
     </q-page-container>
     <img :src="musicIcon" alt="" class="music-status" @click="changeMusicStatus">
     <audio :src="music" class="music-co" autoplay loop ref="music"></audio>
-    <message-box></message-box>
+    <message-box v-if="messageList.length > 0"></message-box>
   </q-layout>
 </template>
 
@@ -31,7 +31,7 @@ export default {
     }
   },
   computed: {
-    ...mapState(['music']),
+    ...mapState(['music', 'messageList']),
     musicIcon () {
       return this.musicStatus ? require('assets/module1/music_on.png') : require('assets/module1/music_off.png')
     }

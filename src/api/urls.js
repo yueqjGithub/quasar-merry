@@ -7,5 +7,5 @@ export default {
   imgHost,
   queryIndex: '/api/public/formwork',
   commitMessage: '/api/message/commit',
-  queryMessageList: '/api/message/config'
+  queryMessageList: '/api/message/list'
 }
