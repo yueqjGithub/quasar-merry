@@ -1,6 +1,6 @@
 import { mapState } from 'vuex';
 <template>
-  <div class="full-page relative-position page-container q-pa-md flex-col flex-jst-btw flex-ali-center">
+  <div class="full-page relative-position page-container q-pa-md flex-col flex-jst-center flex-ali-center">
     <div></div>
     <div class="content-box full-width">
       <q-input
@@ -50,7 +50,7 @@ export default {
       vm.$q.loading.show()
       const res = await vm.$httpPost(urls.commitMessage, obj)
       vm.$q.loading.hide()
-      alert(res.message)
+      alert(res.data.message)
     }
   }
 }

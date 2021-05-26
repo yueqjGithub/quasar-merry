@@ -13,3 +13,7 @@ export function setUrlKey (state, payload) {
 export function setMusic (state, payload) {
   state.music = payload
 }
+
+export function setMessage (state, payload) {
+  state.messageList = payload
+}

@@ -62,7 +62,7 @@ export default {
     handlePan ({ evt, ...info }) { // 上下监听
       const vm = this
       if (info.direction === 'up' && info.distance.y > 2) {
-        vm.step < 9 && vm.step++
+        vm.step < 8 && vm.step++
       }
       if (info.direction === 'down' && info.distance.y > 2) {
         vm.step > 0 && vm.step--
@@ -72,7 +72,11 @@ export default {
   }
 }
 </script>
-
+<style lang="scss">
+.page-container{
+  background: #fefaee;
+}
+</style>
 <style lang="scss" scoped>
 .my-square{
   width: 100px;

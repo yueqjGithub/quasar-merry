@@ -68,23 +68,24 @@ module.exports = function (/* ctx */) {
       chainWebpack (chain) {
         chain.plugin('eslint-webpack-plugin')
           .use(ESLintPlugin, [{ extensions: ['js', 'vue'] }])
-      }
+      },
+      publicPath: '/dist'
     },
 
     // Full list of options: https://v1.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-devServer
     devServer: {
       https: false,
       port: 8080,
-      open: true, // opens browser window automatically
-      proxy: {
-        '/api': {
-          target: 'https://qtapi.apiself.com/v1/api/public',
-          changeOrigin: true,
-          pathRewrite: {
-            '^/api': ''
-          }
-        }
-      }
+      open: true // opens browser window automatically
+      // proxy: {
+      //   '/api': {
+      //     target: 'https://qtapi.apiself.com/v1/api/public',
+      //     changeOrigin: true,
+      //     pathRewrite: {
+      //       '^/api': ''
+      //     }
+      //   }
+      // }
     },
 
     // https://v1.quasar.dev/quasar-cli/quasar-conf-js#Property%3A-framework
@@ -115,7 +116,9 @@ module.exports = function (/* ctx */) {
     // https://v1.quasar.dev/options/animations
     animations: [
       'fadeIn',
-      'fadeOut'
+      'fadeOut',
+      'fadeInUp',
+      'fadeOutUp'
     ],
 
     // https://v1.quasar.dev/quasar-cli/developing-ssr/configuring-ssr

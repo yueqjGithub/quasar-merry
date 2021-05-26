@@ -65,7 +65,7 @@ export default {
           }
         } else {
           vm.show = true
-          if (vm.cur < (vm.total - 1)) {
+          if (vm.next < (vm.total - 2)) {
             vm.next += 2
           } else {
             vm.next = 1

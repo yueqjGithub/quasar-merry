@@ -11,15 +11,20 @@
       </transition>
     </q-page-container>
     <img :src="musicIcon" alt="" class="music-status" @click="changeMusicStatus">
-    <audio src="https://qt.gwyqh.com/music/1468248597.mp3" class="music-co" autoplay loop ref="music"></audio>
+    <audio :src="music" class="music-co" autoplay loop ref="music"></audio>
+    <message-box></message-box>
   </q-layout>
 </template>
 
 <script>
 import { mapMutations, mapState } from 'vuex'
 import urls from '../api/urls'
+import messageBox from 'components/messageBox'
 export default {
   name: 'MainLayout',
+  components: {
+    messageBox
+  },
   data () {
     return {
       musicStatus: 1
@@ -38,7 +43,7 @@ export default {
     }
   },
   methods: {
-    ...mapMutations(['setImgList', 'setInfo', 'setUrlKey', 'setMusic']),
+    ...mapMutations(['setImgList', 'setInfo', 'setUrlKey', 'setMusic', 'setMessage']),
     changeMusicStatus () {
       if (this.musicStatus) {
         this.$refs.music.pause()
@@ -59,8 +64,18 @@ export default {
         console.log(err)
       }
     },
+    async queryMessage (id) {
+      const vm = this
+      try {
+        const res = await vm.$httpGet(urls.queryMessageList, { id: id })
+        vm.setMessage(res.data.data)
+      } catch (err) {
+        console.log(err)
+      }
+    },
     async setModule (params) {
       const vm = this
+      await vm.queryMessage(params.id)
       await vm.queryInfo(params.number)
       if (this.$route.path === '/') {
         switch (params.id) {
