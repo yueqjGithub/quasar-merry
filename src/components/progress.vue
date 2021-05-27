@@ -55,7 +55,7 @@ export default {
           vm.progress += step
           img.remove()
         }
-        img.src = `${urls.imgHost}${item[0]}`
+        img.src = `${urls.imgHost}${item}`
       })
     }
   }

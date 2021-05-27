@@ -41,7 +41,7 @@ export default {
   },
   computed: {
     avatar () {
-      return this.imgList[0] && `${urls.imgHost}${this.imgList[0][0]}`
+      return this.imgList[0] && `${urls.imgHost}${this.imgList[0]}`
     },
     manName () {
       return this.info.find(item => item.key === 'groom_varchar') && this.info.find(item => item.key === 'groom_varchar').value

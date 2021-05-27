@@ -43,7 +43,7 @@ export default {
       return this.info.find(item => item.key === 'bridal_varchar') && this.info.find(item => item.key === 'bridal_varchar').value
     },
     time () {
-      return this.info.find(item => item.key === 'start_date') && this.info.find(item => item.key === 'start_date').value
+      return this.info.find(item => item.key === 'start_date') && this.info.find(item => item.key === 'start_date').value.replaceAll('-', '/')
     },
     day () {
       return this.time ? this.dayList[date.getDayOfWeek(this.time)] : ''

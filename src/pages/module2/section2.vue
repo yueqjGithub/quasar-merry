@@ -30,6 +30,17 @@
       </div>
       <img src="~assets/module2/b2p.png" alt="" class="full-width cus-ani-scaleX cus-ani-scaleX ani-duration-1s ani-delay-25s">
     </div>
+<!--    时间，地点-->
+    <p class="font-18 text-sj cus-ani-slideLeftIn ani-duration-05s ani-delay-35s">{{timeShow}}{{day}}</p>
+    <p class="font-18 text-sj cus-ani-slideTopIn ani-duration-05s ani-delay-4s">{{area}}</p>
+    <p class="font-18 text-sj cus-ani-slideRightIn ani-duration-05s ani-delay-45s">{{address}}</p>
+<!--    摇摆花束-->
+    <div class="shake-f-l shake-f cus-ani-shakeLoop ani-duration-4s">
+      <img src="~assets/module2/lb2p.png" alt="" class="full-width cus-ani-fadeIn ani-delay-5s ani-duration-05s">
+    </div>
+    <div class="shake-f-r shake-f cus-ani-shakeLoop ani-duration-4s">
+      <img src="~assets/module2/rb2p.png" alt="" class="full-width cus-ani-fadeIn ani-delay-5s ani-duration-05s">
+    </div>
   </div>
 </template>
 
@@ -46,7 +57,7 @@ export default {
   },
   computed: {
     avatar () {
-      return this.imgList[0] && `${urls.imgHost}${this.imgList[0][0]}`
+      return this.imgList[0] && `${urls.imgHost}${this.imgList[0]}`
     },
     manName () {
       return this.info.find(item => item.key === 'groom_varchar') && this.info.find(item => item.key === 'groom_varchar').value
@@ -55,7 +66,10 @@ export default {
       return this.info.find(item => item.key === 'bridal_varchar') && this.info.find(item => item.key === 'bridal_varchar').value
     },
     time () {
-      return this.info.find(item => item.key === 'start_date') && this.info.find(item => item.key === 'start_date').value
+      return this.info.find(item => item.key === 'start_date') && this.info.find(item => item.key === 'start_date').value.replaceAll('-', '/')
+    },
+    timeShow () {
+      return date.formatDate(this.time, 'YYYY年MM月DD日')
     },
     day () {
       return this.time ? this.dayList[date.getDayOfWeek(this.time)] : ''
@@ -81,5 +95,19 @@ export default {
   top: 2%;
   left: 50%;
   transform: translate(-50%, 0);
+}
+.shake-f{
+  position: absolute;
+  top: 0;
+  width: 15%;
+  img{
+    width: 100%;
+  }
+  &.shake-f-l{
+    left: .15rem;
+  }
+  &.shake-f-r{
+    right: .15rem;
+  }
 }
 </style>

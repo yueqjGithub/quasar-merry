@@ -24,7 +24,7 @@ export default {
   props: ['imgList'],
   computed: {
     imgSrc () {
-      return this.imgList[5] && `${urls.imgHost}${this.imgList[5][0]}`
+      return this.imgList[5] && `${urls.imgHost}${this.imgList[5]}`
     }
   }
 }
