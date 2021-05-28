@@ -7,16 +7,16 @@
       mode="out-in"
     >
       <div class="full-width message-item flex-row flex-jst-start flex-ali-center" v-if="show" :key="1">
-        <q-avatar>
+        <q-avatar size="40px">
           <img :src="curMessage.headimgurl">
         </q-avatar>
-        <p class="font-14 text-white">{{curMessage.content}}</p>
+        <p class="text-white font-16">{{curMessage.content}}</p>
       </div>
       <div class="full-width message-item flex-row flex-jst-start flex-ali-center" v-else :key="2">
-        <q-avatar>
+        <q-avatar size="40px">
           <img :src="nextMessage.headimgurl">
         </q-avatar>
-        <p class="font-14 text-white">{{nextMessage.content}}</p>
+        <p class="text-white font-14">{{nextMessage.content}}</p>
       </div>
     </transition>
   </div>
@@ -43,10 +43,10 @@ export default {
       return this.messageList.length
     },
     curMessage () {
-      return this.messageList[this.cur] && this.messageList[this.cur].slice(0, 15)
+      return this.messageList[this.cur] || null
     },
     nextMessage () {
-      return this.messageList[this.next] && this.messageList[this.next].slice(0, 15)
+      return this.messageList[this.next] || null
     }
   },
   mounted () {
@@ -59,15 +59,19 @@ export default {
       vm.interval = setInterval(() => {
         if (vm.show) {
           vm.show = false
-          if (vm.cur < (vm.total - 1)) {
+          if (vm.cur < (vm.total - 2)) {
             vm.cur += 2
-          } else {
+          } else if (vm.cur === vm.total - 2) {
             vm.cur = 0
+          } else {
+            vm.cur = 1
           }
         } else {
           vm.show = true
-          if (vm.next < (vm.total - 2)) {
-            vm.next += 2
+          if (vm.cur < (vm.total - 1)) {
+            vm.next = vm.cur + 1
+          } else if (vm.cur === (vm.total - 1)) {
+            vm.next = 0
           } else {
             vm.next = 1
           }
@@ -86,10 +90,13 @@ export default {
 }
 .message-item{
   color: white;
-  height: .3rem;
-  border-radius: .25rem;
-  padding: .1rem;
+  border-radius: .3rem;
+  padding: .05rem;
   background: rgba(0,0,0,.6);
-  font-size: .14rem;
+  p{
+    margin-left: .1rem;
+    margin-right: .2rem;
+    margin-bottom: 0;
+  }
 }
 </style>

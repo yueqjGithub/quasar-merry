@@ -1,5 +1,5 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
+  <q-layout view="lHh Lpr lff">
     <q-page-container>
       <transition
         appear
@@ -59,7 +59,7 @@ export default {
         const res = await vm.$httpGet(urls.queryIndex, { number: number })
         vm.setImgList(res.data.data.checkImgs)
         vm.setInfo(res.data.data.configjson)
-        vm.setMusic(res.data.data.misicactive.music_cover_mapimage)
+        vm.setMusic(res.data.data.misicactive.music_path_file)
       } catch (err) {
         console.log(err)
       }
@@ -127,7 +127,7 @@ export default {
   position: fixed;
   right: .2rem;
   top: .2rem;
-  widows: .35rem;
+  width: .35rem;
   z-index: 10;
   animation: wheel-rotate 2s linear infinite;
 }

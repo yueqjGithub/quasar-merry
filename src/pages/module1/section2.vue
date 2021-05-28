@@ -8,7 +8,6 @@
     </div>
     <img src="~assets/module1/f1ap.png" alt="" class="bg-fl fl5 cus-ani-slideLeftIn ani-duration-1s ani-delay-1s">
     <img src="~assets/module1/f1ap.png" alt="" class="bg-fl fl6 cus-ani-slideLeftIn ani-duration-1s ani-delay-1s">
-<!--    内容-->
     <div class="full-width flex-1 flex-col flex-jst-start flex-ali-center">
       <img src="~assets/module1/wel2p.png" alt="" class="width-40 q-pa-md cus-ani-slideTopIn ani-duration-1s">
       <img src="~assets/module1/b2p.png" alt="" class="width-50 cus-ani-slideBottomIn ani-duration-1s">
@@ -43,7 +42,7 @@ export default {
       return this.info.find(item => item.key === 'bridal_varchar') && this.info.find(item => item.key === 'bridal_varchar').value
     },
     time () {
-      return this.info.find(item => item.key === 'start_date') && this.info.find(item => item.key === 'start_date').value
+      return this.info.find(item => item.key === 'start_date') && this.info.find(item => item.key === 'start_date').value.replace(/-/g, '/')
     },
     day () {
       return this.time ? this.dayList[date.getDayOfWeek(this.time)] : ''

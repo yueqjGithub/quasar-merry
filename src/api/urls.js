@@ -1,6 +1,6 @@
 const baseUrl = 'https://qtapi.apiself.com/v1'
 // const baseUrl = ''
-const imgHost = 'https://qtapi.apiself.com/'
+const imgHost = process.env.IMG_HOST
 
 export default {
   baseUrl,

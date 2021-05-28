@@ -38,7 +38,7 @@ export default {
     progress: {
       handler: function (val) {
         console.log(val)
-        if (val >= 1) {
+        if (val >= 0.8) {
           this.$emit('loaded')
         }
       }
@@ -55,7 +55,7 @@ export default {
           vm.progress += step
           img.remove()
         }
-        img.src = `${urls.imgHost}${item[0]}`
+        img.src = `${urls.imgHost}${item}`
       })
     }
   }
