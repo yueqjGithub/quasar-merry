@@ -17,3 +17,7 @@ export function setMusic (state, payload) {
 export function setMessage (state, payload) {
   state.messageList = payload
 }
+
+export function setFastList (state, payload) {
+  state.fastList = payload
+}

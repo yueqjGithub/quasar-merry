@@ -57,6 +57,9 @@ html{
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+  &.scroll-allow{
+    overflow-y: scroll;
+  }
 }
 .page-hidden{
   overflow: hidden;
@@ -351,5 +354,32 @@ html{
   }
   100%{
     transform: rotate(0deg);
+  }
+}
+.msg-ani{
+  animation: 3s linear 0s infinite normal backwards running cusAniMsgIcon;
+}
+@keyframes cusAniMsgIcon {
+  0%{
+    transform: scale3d(1, 1, 1);
+  }
+  10%{
+    transform: scale3d(1.25, 0.75, 1);
+  }
+  13% {
+    transform: scale3d(0.75, 1.25, 1);
+  }
+  17%{
+    transform: scale3d(1.15, 0.85, 1);
+  }
+  22%{
+    transform: scale3d(.95, 1.05, 1);
+  }
+  25%{
+    transform: scale3d(1.05, .95, 1);
+  }
+  30%{
+    transform: scale3d(1, 1, 1);
+    opacity: 1;
   }
 }

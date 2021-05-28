@@ -1,32 +1,33 @@
 <template>
-  <div class="full-page flex-col flex-jst-start flex-ali-center relative-position page-container page-hidden">
+  <div class="full-page scroll-allow flex-col flex-jst-start flex-ali-center relative-position page-container">
+<!--    <div class="full-page click-content"></div>-->
     <img src="~assets/module2/tl.png" alt="" class="width-50 cus-ani-slideTopIn ani-duration-05s ma-row-md">
     <div class="cus-ani-zoomIn ani-duration-1s ani-delay-05s ma-row-md relative-position" style="z-index: 4">
       <q-img
         :src="avatar"
         spinner-color="white"
-        style="width: 50vw; border-radius: 50%;"
+        style="width: 40vw; border-radius: 50%;"
         position="0 0"
         :ratio="1/1"
       />
       <img
         src="~assets/module2/fr.png"
-        style="width: 60vw; position: absolute;top: -6%;left: -14%;display: block;"
+        style="width: 50vw; position: absolute;top: -6%;left: -14%;display: block;"
       />
     </div>
 <!--    名字-->
     <div class="name-container flex-row flex-jst-center flex-ali-center width-80">
-      <p class="font-20 text-sj cus-ani-slideLeftIn ani-duration-05s ani-delay-15s">{{manName}}</p>
-      <div class="q-ma-md cus-ani-zoomIn ani-duration-1s ani-delay-15s">
+      <p class="font-18 text-sj cus-ani-slideLeftIn ani-duration-05s ani-delay-15s">{{manName}}</p>
+      <div class="q-ma-md cus-ani-zoomIn ani-duration-1s ani-delay-15s width-10">
         <img src="~assets/module2/heart2p.png" alt="" class="full-width cus-ani-breath breath-loop ani-duration-2s">
       </div>
-      <p class="font-20 text-sj cus-ani-slideRightIn ani-duration-05s ani-delay-15s">{{womanName}}</p>
+      <p class="font-18 text-sj cus-ani-slideRightIn ani-duration-05s ani-delay-15s">{{womanName}}</p>
     </div>
-    <img src="~assets/module2/heart1p.png" alt="" class="width-60 cus-ani-slideBottomIn ani-duration-1s ani-delay-25s ma-row-md">
+    <img src="~assets/module2/heart1p.png" alt="" class="width-50 cus-ani-slideBottomIn ani-duration-1s ani-delay-25s">
 <!--    恭请光临-->
-    <div class="width-80 ma-row-md relative-position">
+    <div class="width-60 ma-row-md relative-position">
       <div class="wel-tips">
-        <p class="text-warning font-24 text-bold cus-ani-slideBottomIn ani-duration-1s ani-delay-25s">恭请光临</p>
+        <p class="text-warning font-22 text-bold cus-ani-slideBottomIn ani-duration-1s ani-delay-25s">恭请光临</p>
       </div>
       <img src="~assets/module2/b2p.png" alt="" class="full-width cus-ani-scaleX cus-ani-scaleX ani-duration-1s ani-delay-25s">
     </div>
@@ -87,7 +88,7 @@ export default {
 <style lang="scss" scoped>
 .page-container{
   .name-container{
-    margin-top: .7rem;
+    margin-top: .3rem;
   }
 }
 .wel-tips{

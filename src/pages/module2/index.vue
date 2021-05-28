@@ -16,7 +16,7 @@
       <section6 v-if="step === 5" :img-list="imgList"></section6>
       <section7 v-if="step === 6" :img-list="imgList"></section7>
       <section8 v-if="step === 7" :img-list="imgList"></section8>
-      <section9 v-else-if="step === 8"></section9>
+      <section9 v-if="step === 8"></section9>
     </transition>
   </q-page>
 </template>
