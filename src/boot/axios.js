@@ -1,8 +1,7 @@
 import Vue from 'vue'
 import axios from 'axios'
 import urls from '../api/urls'
-
-console.log(process.env.CUS_ENV)
+import qs from 'qs'
 const http = axios.create({
   baseURL: urls.baseUrl,
   timeout: 30000
@@ -11,8 +10,11 @@ const http = axios.create({
 const httpPost = (url, data = {}) => {
   return http({
     url,
-    data,
-    method: 'POST'
+    data: qs.stringify(data),
+    method: 'POST',
+    headers: {
+      'Content-type': 'application/x-www-form-urlencoded'
+    }
   })
 }
 

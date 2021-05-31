@@ -10,8 +10,8 @@
         <router-view />
       </transition>
     </q-page-container>
-    <img :src="musicIcon" alt="" class="music-status" @click="changeMusicStatus">
-    <audio :src="music" class="music-co" autoplay loop ref="music"></audio>
+    <img :src="musicIcon" alt="" class="music-status" @click="changeMusicStatus" ref='turnAudio'>
+    <audio :src="music" class="music-co" autoplay="autoplay" ref="music" controls="controls"></audio>
     <message-box v-if="messageList.length > 0"></message-box>
     <div class="fast-msg-out flex-row flex-jst-center flex-ali-center msg-ani" @click="openSheet">
       <img src="~assets/msg.png" alt="">
@@ -53,18 +53,25 @@ export default {
     }
   },
   mounted () {
+    // const vm = this
     const target = dayjs('2021/06/15')
     const now = dayjs()
     if (now.isAfter(target)) {
       return false
     }
     this.getUrlKey()
-    if (this.$refs.music.paused) {
-      this.$refs.music.play()
-    }
+    this.test()
   },
   methods: {
     ...mapMutations(['setImgList', 'setInfo', 'setUrlKey', 'setMusic', 'setMessage', 'setFastList']),
+    test () {
+      const vm = this
+      if (this.$refs.music.paused) {
+        console.log(1)
+        vm.$refs.music.play()
+        vm.audioInit = true
+      }
+    },
     openSheet () { // 打开快捷祝福
       const vm = this
       this.$q.bottomSheet({
@@ -80,10 +87,12 @@ export default {
         nickname: vm.nickname,
         headimgurl: vm.headimg,
         content: content,
-        number: vm.number
+        order_number: vm.number,
+        formwork_id: vm.urlKey.id
       }
       vm.$q.loading.show()
       const res = await vm.$httpPost(urls.commitMessage, obj)
+      await vm.queryMessage(vm.urlKey.id)
       vm.$q.loading.hide()
       alert(res.data.message)
     },
@@ -110,7 +119,7 @@ export default {
     async queryMessage (id) {
       const vm = this
       try {
-        const res = await vm.$httpGet(urls.queryMessageList, { id: id })
+        const res = await vm.$httpGet(urls.queryMessageList, { formwork_id: id, order_number: vm.urlKey.number })
         vm.setMessage(res.data.data)
       } catch (err) {
         console.log(err)
@@ -177,6 +186,7 @@ export default {
   position: absolute;
   left: -100%;
   visibility: hidden;
+  display: none;
 }
 .music-status{
   position: fixed;

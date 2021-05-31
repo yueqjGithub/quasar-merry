@@ -105,7 +105,7 @@ export default {
     },
     openNav () {
       const vm = this
-      window.open(`https://apis.map.qq.com/uri/v1/search?keyword=${vm.address}&region=${vm.area}&referer=OB4BZ-D4W3U-B7VVO-4PJWW-6TKDJ-WPB77`)
+      window.open(`https://apis.map.qq.com/uri/v1/search?keyword=${vm.address}&region=${vm.area}&referer=poytoy`)
     }
   }
 }

@@ -82,7 +82,7 @@ module.exports = function (/* ctx */) {
       open: true // opens browser window automatically
       // proxy: {
       //   '/api': {
-      //     target: 'https://qtapi.apiself.com/v1/api/public',
+      //     target: 'https://qtapi.apiself.com/v1/',
       //     changeOrigin: true,
       //     pathRewrite: {
       //       '^/api': ''
