@@ -87,6 +87,12 @@ export default {
     },
     address () {
       return this.info.find(item => item.key === 'address_address') && this.info.find(item => item.key === 'address_address').value
+    },
+    mapUrl () {
+      const vm = this
+      const lat = this.info.find(item => item.key === 'area_area') && this.info.find(item => item.key === 'area_area').latitude
+      const lon = this.info.find(item => item.key === 'area_area') && this.info.find(item => item.key === 'area_area').longitude
+      return `https://apis.map.qq.com/uri/v1/marker?marker=coord:${lat},${lon};title:${vm.address};addr:&referer=toypoy`
     }
   },
   mounted () {
@@ -105,7 +111,7 @@ export default {
     },
     openNav () {
       const vm = this
-      window.open(`https://apis.map.qq.com/uri/v1/search?keyword=${vm.address}&region=${vm.area}&referer=poytoy`)
+      window.open(vm.mapUrl)
     }
   }
 }
