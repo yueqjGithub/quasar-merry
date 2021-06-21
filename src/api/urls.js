@@ -1,4 +1,4 @@
-const baseUrl = 'https://qtapi.apiself.com/v1'
+const baseUrl = 'https://toyapi.shihuai.tech/v1'
 // const baseUrl = ''
 const imgHost = process.env.IMG_HOST
 

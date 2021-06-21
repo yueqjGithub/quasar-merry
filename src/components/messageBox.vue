@@ -7,7 +7,7 @@
       mode="out-in"
     >
       <div class="full-width message-item flex-row flex-jst-start flex-ali-center" v-if="show" :key="1">
-        <q-avatar size="40px">
+        <q-avatar size="40px" v-if="curMessage">
           <img :src="curMessage.headimgurl">
         </q-avatar>
         <p class="text-white font-16">{{curMessage.content}}</p>
@@ -50,7 +50,6 @@ export default {
     }
   },
   mounted () {
-    console.log(this.messageList)
     this.playLoop()
   },
   methods: {

@@ -54,7 +54,7 @@ export default {
   },
   mounted () {
     // const vm = this
-    const target = dayjs('2021/06/15')
+    const target = dayjs('2021/07/15')
     const now = dayjs()
     if (now.isAfter(target)) {
       return false
@@ -153,9 +153,9 @@ export default {
     getUrlKey () {
       const vm = this
       // 头像与nickname取出时需要decodeURIComponent二次转码
-      const query = decodeURIComponent(window.location.search)
-      if (query) {
-        const arr = query.split('?')[1].split('&')
+      const query = decodeURIComponent(window.location.href)
+      const arr = query.split('?')[1] ? query.split('?')[1].split('&') : []
+      if (arr.length > 0) {
         const param = {}
         arr.forEach(item => {
           const prr = item.split('=')
