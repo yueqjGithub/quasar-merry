@@ -393,3 +393,16 @@ p,span,div{
     opacity: 1;
   }
 }
+
+.wish-sheet{
+  .q-dialog__message{
+    text-align: right;
+  }
+  div:nth-of-type(2){
+    max-height: 25vh;
+    overflow-y: scroll;
+    .q-bottom-sheet__item{
+      text-align: right;
+    }
+  }
+}

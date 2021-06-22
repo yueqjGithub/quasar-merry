@@ -75,8 +75,9 @@ export default {
     openSheet () { // 打开快捷祝福
       const vm = this
       this.$q.bottomSheet({
-        message: '快捷祝福',
-        actions: [...vm.dealFast]
+        message: 'تەبرىك سۆزلىرىنى تاللاڭ',
+        actions: [...vm.dealFast],
+        class: 'wish-sheet'
       }).onOk(action => {
         vm.commitInfo(action.label)
       })
