@@ -143,10 +143,13 @@ export default {
       if (this.$route.path === '/') {
         switch (params.id) {
           case '1':
-            vm.$router.push({ name: 'module1', params: { ...params } })
+            vm.$router.push({ name: 'module3', params: { ...params } })
             break
           case '2':
             vm.$router.push({ name: 'module2', params: { ...params } })
+            break
+          case '3':
+            vm.$router.push({ name: 'module3', params: { ...params } })
             break
         }
       }
