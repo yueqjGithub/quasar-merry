@@ -9,14 +9,14 @@
       v-if="loadend"
     >
       <section1 v-if="step === 0" :img-list="imgList" :info="info"></section1>
-      <!-- <section2 v-else-if="step === 1" :img-list="imgList" :info="info"></section2>
+      <section2 v-else-if="step === 1" :img-list="imgList" :info="info"></section2>
       <section3 v-else-if="step === 2" :img-list="imgList"></section3>
       <section4 v-else-if="step === 3" :img-list="imgList"></section4>
-      <section5 v-else-if="step === 4" :img-list="imgList"></section5>
-      <section6 v-else-if="step === 5" :img-list="imgList"></section6>
-      <section7 v-else-if="step === 6" :img-list="imgList"></section7>
-      <section8 v-else-if="step === 7" :img-list="imgList"></section8>
-      <section9 v-else-if="step === 8"></section9> -->
+<!--      <section5 v-else-if="step === 4" :img-list="imgList"></section5>-->
+<!--      <section6 v-else-if="step === 5" :img-list="imgList"></section6>-->
+<!--      <section7 v-else-if="step === 6" :img-list="imgList"></section7>-->
+<!--      <section8 v-else-if="step === 7" :img-list="imgList"></section8>-->
+<!--      <section9 v-else-if="step === 8"></section9>-->
     </transition>
   </q-page>
 </template>
@@ -25,10 +25,16 @@
 import myLoading from '../../components/progress.vue'
 import { mapState } from 'vuex'
 import section1 from 'pages/module3/section1'
+import section2 from 'pages/module3/section2'
+import section3 from 'pages/module3/section3'
+import section4 from 'pages/module3/section4'
 export default {
   components: {
     myLoading,
-    section1
+    section1,
+    section2,
+    section3,
+    section4
   },
   data () {
     return {

@@ -71,7 +71,7 @@ export default {
 
 <style lang="scss" scoped>
 .page-container{
-  padding: .5rem 0 0 0;
+  padding: .3rem 0 0 0;
   .name-container{
     margin-top: .5rem;
     .name-view{
