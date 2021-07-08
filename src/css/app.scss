@@ -393,7 +393,34 @@ p,span,div{
     opacity: 1;
   }
 }
-
+.cus-ani-rotateLeftIn{
+  opacity: 0;
+  animation-name: rotateLeftIn;
+  animation-fill-mode: forwards;
+}
+.cus-ani-rotateRightIn{
+  opacity: 0;
+  animation-name: rotateRightIn;
+  animation-fill-mode: forwards;
+}
+@keyframes rotateLeftIn {
+  from{
+    transform: rotate(-130deg);
+  }
+  to{
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+}
+@keyframes rotateRightIn {
+  from{
+    transform: rotate(130deg);
+  }
+  to{
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+}
 .wish-sheet{
   .q-dialog__message{
     text-align: right;

@@ -24,8 +24,8 @@
 <script>
 import myLoading from '../../components/progress.vue'
 import { mapState } from 'vuex'
-import section1 from 'pages/module3/section1'
-import section2 from 'pages/module3/section2'
+import section1 from 'pages/module4/section1'
+import section2 from 'pages/module4/section2'
 import section3 from 'pages/module3/section3'
 import section4 from 'pages/module3/section4'
 import section5 from 'pages/module3/section5'
