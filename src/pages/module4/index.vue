@@ -26,9 +26,9 @@ import myLoading from '../../components/progress.vue'
 import { mapState } from 'vuex'
 import section1 from 'pages/module4/section1'
 import section2 from 'pages/module4/section2'
-import section3 from 'pages/module3/section3'
-import section4 from 'pages/module3/section4'
-import section5 from 'pages/module3/section5'
+import section3 from 'pages/module4/section3'
+import section4 from 'pages/module4/section4'
+import section5 from 'pages/module4/section5'
 import section6 from 'pages/module3/section6'
 import section7 from 'pages/module3/section7'
 import section8 from 'pages/module3/section8'
@@ -73,8 +73,31 @@ export default {
 }
 </script>
 <style lang="scss">
+.word-sub{
+  position: relative;
+  color: #7a7a7b;
+  &:before{
+    content: '';
+    width: .15rem;
+    height: .01rem;
+    background: #7a7a7b;
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translate(-140%, -.01rem);
+  }
+  &:after{
+    content: '';
+    width: .15rem;
+    height: .01rem;
+    background: #7a7a7b;
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translate(140%, -.01rem);
+  }
+}
 .page-container{
-  background: #ffeff1;
 }
 </style>
 <style lang="scss" scoped>
