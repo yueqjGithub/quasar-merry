@@ -29,10 +29,10 @@ import section2 from 'pages/module4/section2'
 import section3 from 'pages/module4/section3'
 import section4 from 'pages/module4/section4'
 import section5 from 'pages/module4/section5'
-import section6 from 'pages/module3/section6'
-import section7 from 'pages/module3/section7'
-import section8 from 'pages/module3/section8'
-import section9 from 'pages/module3/section9'
+import section6 from 'pages/module4/section6'
+import section7 from 'pages/module4/section7'
+import section8 from 'pages/module4/section8'
+import section9 from 'pages/module4/section9'
 export default {
   components: {
     myLoading,

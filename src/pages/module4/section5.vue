@@ -17,7 +17,8 @@
 </template>
 
 <script>
-import urls from 'src/api/urls'
+import urls from '../../api/urls.js'
+
 export default {
   name: 'section5',
   props: ['imgList', 'info'],
