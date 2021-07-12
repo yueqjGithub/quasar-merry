@@ -54,11 +54,11 @@ export default {
   },
   mounted () {
     // const vm = this
-    const target = dayjs('2021/07/15')
-    const now = dayjs()
-    if (now.isAfter(target)) {
-      return false
-    }
+    // const target = dayjs('2021/07/15')
+    // const now = dayjs()
+    // if (now.isAfter(target)) {
+    //   return false
+    // }
     this.getUrlKey()
     this.test()
   },
