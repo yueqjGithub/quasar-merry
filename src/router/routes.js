@@ -9,7 +9,8 @@ const routes = [
       { path: '/module3', name: 'module3', component: () => import('pages/module3/index.vue') },
       { path: '/module4', name: 'module4', component: () => import('pages/module4/index.vue') },
       { path: '/module5', name: 'module5', component: () => import('pages/module5/index.vue') },
-      { path: '/module6', name: 'module6', component: () => import('pages/module6/index.vue') }
+      { path: '/module6', name: 'module6', component: () => import('pages/module6/index.vue') },
+      { path: '/module7', name: 'module7', component: () => import('pages/module7/index.vue') }
     ]
   },
   // Always leave this as last one,

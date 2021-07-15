@@ -1,5 +1,6 @@
 <template>
   <div class="full-page page-container relative-position">
+    <div class="full-page click-content"></div>
     <div class="flex-col flex-jst-center flex-ali-center">
       <img src="~assets/module4/sec5img1.png" alt="" class="width-20 cus-ani-rotateLeftIn ani-duration-15s">
       <p class="word-sub font-16 q-ma-md cus-ani-fadeIn ani-duration-1s">GRATEFUL TIME</p>

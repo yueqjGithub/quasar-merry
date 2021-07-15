@@ -1,5 +1,6 @@
 <template>
   <div class="full-page page-container q-pa-lg flex-col flex-jst-center flex-jst-center">
+    <div class="full-page click-content"></div>
     <img :src="imgSrc" alt="" class="full-width">
     <div class="flex-1 flex-row flex-jst-end flex-ali-end full-width">
       <img src="~assets/module5/sec2flw.png" alt="" class="width-30">

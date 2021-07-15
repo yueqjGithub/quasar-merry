@@ -1,5 +1,6 @@
 <template>
   <div class="full-page flex-col flex-jst-start flex-ali-center page-container q-pa-md">
+    <div class="full-page click-content"></div>
     <div class="img-out relative-position full-width">
       <img src="~assets/module4/sec2flw.png" alt="" class="sec-flw cus-ani-rotateLeftIn ani-duration-1s ani-delay-1s">
       <img :src="imgSrc" alt="" class="full-width cus-ani-slideTopIn ani-duration-1s">

@@ -1,5 +1,6 @@
 <template>
   <div class="full-page page-container flex-col flex-jst-center flex-ali-center">
+    <div class="full-page click-content"></div>
     <div class="cont-1 full-width relative-position flex-row flex-jst-center flex-ali-center">
       <img src="~assets/module5/sec1pic1.png" alt="" class="width-80">
       <div class="fly-out flex-row flex-jst-btw flex-ali-center width-80">

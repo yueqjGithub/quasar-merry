@@ -14,8 +14,9 @@
       <section4 v-else-if="step === 3" :img-list="imgList"></section4>
       <section5 v-else-if="step === 4" :img-list="imgList"></section5>
       <section6 v-else-if="step === 5" :img-list="imgList"></section6>
-      <section8 v-else-if="step === 6" :img-list="imgList"></section8>
-      <section9 v-else-if="step === 7"></section9>
+      <section7 v-else-if="step === 6" :img-list="imgList"></section7>
+      <section8 v-else-if="step === 7" :img-list="imgList"></section8>
+      <section9 v-else-if="step === 8"></section9>
     </transition>
   </q-page>
 </template>
@@ -23,14 +24,15 @@
 <script>
 import myLoading from '../../components/progress.vue'
 import { mapState } from 'vuex'
-import section1 from 'pages/module5/section1'
-import section2 from 'pages/module5/section2'
-import section3 from 'pages/module5/section3'
-import section4 from 'pages/module5/section4'
-import section5 from 'pages/module5/section5'
-import section6 from 'pages/module5/section6'
-import section8 from 'pages/module5/section8'
-import section9 from 'pages/module5/section9'
+import section1 from 'pages/module7/section1'
+import section2 from 'pages/module6/section2'
+import section3 from 'pages/module6/section3'
+import section4 from 'pages/module6/section4'
+import section5 from 'pages/module6/section5'
+import section6 from 'pages/module6/section6'
+import section7 from 'pages/module6/section7'
+import section8 from 'pages/module6/section8'
+import section9 from 'pages/module6/section9'
 export default {
   components: {
     myLoading,
@@ -40,13 +42,16 @@ export default {
     section4,
     section5,
     section6,
+    section7,
     section8,
     section9
   },
   data () {
     return {
       step: 0,
-      loadend: false
+      loadend: false,
+      tout: null,
+      showleaf: true
     }
   },
   computed: {
@@ -58,30 +63,28 @@ export default {
     },
     handlePan ({ evt, ...info }) { // 上下监听
       const vm = this
+      vm.showleaf = false
       if (info.direction === 'up' && info.distance.y > 2) {
-        vm.step < 7 && vm.step++
+        vm.step < 8 && vm.step++
       }
       if (info.direction === 'down' && info.distance.y > 2) {
         vm.step > 0 && vm.step--
       }
-      console.log(vm.step)
+      vm.tout = setTimeout(() => {
+        vm.showleaf = true
+      }, 500)
     }
   }
 }
 </script>
 <style lang="scss">
 .page-container{
-  background-image: url("~assets/module5/m5bg.jpg");
+  background: url("~assets/module7/m7bg.jpg");
   background-size: 100% 100%;
-  .m5-text-primary{
-    color: #5b8d72;
+  .m7-text-primary{
+    color: #d69241;
   }
 }
 </style>
 <style lang="scss" scoped>
-.my-square{
-  width: 100px;
-  height: 100px;
-  background: yellow;
-}
 </style>

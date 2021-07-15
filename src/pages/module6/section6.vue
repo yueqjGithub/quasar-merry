@@ -3,15 +3,15 @@
     <div class="full-page click-content"></div>
     <img src="~assets/module6/m6s6p1.png" alt="" class="width-80">
     <img src="~assets/module6/m6s6p2.png" alt="" class="width-60 ma-row-md">
-    <div class="full-width imt-out">
-      <img :src="imgSrc[0]" alt="" class="full-width cus-ani-slideBottomIn ani-duration-2s">
+    <div class="full-width img-out cus-ani-slideBottomIn ani-duration-2s">
+      <img :src="imgSrc[0]" alt="" class="full-width">
     </div>
     <div class="full-width flex-row flex-jst-btw flex-ali-center ma-row-md">
       <div class="img-out img-btm cus-ani-slideLeftIn ani-duration-2s ani-delay-05s">
         <img :src="imgSrc[1]" alt="">
       </div>
       <div class="img-out img-btm cus-ani-slideRightIn ani-duration-2s ani-delay-05s">
-        <img :src="imgSrc[1]" alt="">
+        <img :src="imgSrc[2]" alt="">
       </div>
     </div>
     <div class="full-width q-pa-lg relative-position flex-row flex-jst-center flex-ali-end bird-out">
