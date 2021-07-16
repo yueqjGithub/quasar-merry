@@ -7,7 +7,7 @@
         <img :src="imgSrcList[0]" alt="">
       </div>
       <div class="img-slide cus-ani-slideLeftIn ani-duration-1s">
-        <img :src="imgSrcList[0]" alt="">
+        <img :src="imgSrcList[1]" alt="">
       </div>
     </div>
   </div>

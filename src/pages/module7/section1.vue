@@ -1,6 +1,6 @@
 <template>
   <div class="full-page page-container flex-col flex-jst-center flex-ali-center">
-<!--    <div class="full-page click-content"></div>-->
+    <div class="full-page click-content"></div>
     <img src="~assets/module7/m7s1p1.png" alt="" class="width-60">
     <div class="q-pa-md flex-row flex-jst-center flex-ali-center width-80">
       <div class="m7-text-primary font-24">{{manName}}</div>

@@ -3,10 +3,11 @@
     <my-loading :img-list="imgList" @loaded="loaded" v-if="!loadend"></my-loading>
     <transition
       appear
-      enter-active-class="animated fadeIn"
-      leave-active-class="animated fadeOut"
+      enter-active-class="animated flipInX"
+      leave-active-class="animated flipOutX"
       mode="out-in"
       v-if="loadend"
+      :duration="{enter: 1000}"
     >
       <section1 v-if="step === 0" :img-list="imgList" :info="info"></section1>
       <section2 v-else-if="step === 1" :img-list="imgList" :info="info"></section2>
@@ -14,9 +15,8 @@
       <section4 v-else-if="step === 3" :img-list="imgList"></section4>
       <section5 v-else-if="step === 4" :img-list="imgList"></section5>
       <section6 v-else-if="step === 5" :img-list="imgList"></section6>
-      <section7 v-else-if="step === 6" :img-list="imgList"></section7>
-      <section8 v-else-if="step === 7" :img-list="imgList"></section8>
-      <section9 v-else-if="step === 8"></section9>
+      <section8 v-else-if="step === 6" :img-list="imgList"></section8>
+      <section9 v-else-if="step === 7"></section9>
     </transition>
   </q-page>
 </template>
@@ -25,14 +25,13 @@
 import myLoading from '../../components/progress.vue'
 import { mapState } from 'vuex'
 import section1 from 'pages/module7/section1'
-import section2 from 'pages/module6/section2'
-import section3 from 'pages/module6/section3'
-import section4 from 'pages/module6/section4'
-import section5 from 'pages/module6/section5'
-import section6 from 'pages/module6/section6'
-import section7 from 'pages/module6/section7'
-import section8 from 'pages/module6/section8'
-import section9 from 'pages/module6/section9'
+import section2 from 'pages/module7/section2'
+import section3 from 'pages/module7/section3'
+import section4 from 'pages/module7/section4'
+import section5 from 'pages/module7/section5'
+import section6 from 'pages/module7/section6'
+import section8 from 'pages/module7/section8'
+import section9 from 'pages/module7/section9'
 export default {
   components: {
     myLoading,
@@ -42,7 +41,6 @@ export default {
     section4,
     section5,
     section6,
-    section7,
     section8,
     section9
   },
@@ -65,7 +63,7 @@ export default {
       const vm = this
       vm.showleaf = false
       if (info.direction === 'up' && info.distance.y > 2) {
-        vm.step < 8 && vm.step++
+        vm.step < 7 && vm.step++
       }
       if (info.direction === 'down' && info.distance.y > 2) {
         vm.step > 0 && vm.step--

@@ -121,7 +121,9 @@ module.exports = function (/* ctx */) {
       'fadeIn',
       'fadeOut',
       'fadeInUp',
-      'fadeOutUp'
+      'fadeOutUp',
+      'flipInX',
+      'flipOutX'
     ],
 
     // https://v1.quasar.dev/quasar-cli/developing-ssr/configuring-ssr
