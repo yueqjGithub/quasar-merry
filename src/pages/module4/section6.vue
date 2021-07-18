@@ -1,5 +1,6 @@
 <template>
   <div class="full-page page-container relative-position">
+    <div class="full-page click-content"></div>
     <div class="relative-position full-width cont-out q-pa-lg">
       <img :src="imgSrc" alt="" class="full-width cus-ani-slideTopIn ani-duration-15s">
       <div class="hua hua-1 cus-ani-slideLeftIn ani-duration-1s ani-delay-15s">

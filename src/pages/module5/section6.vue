@@ -1,5 +1,6 @@
 <template>
   <div class="full-page page-container flex-col flex-jst-center flex-ali-center">
+    <div class="full-page click-content"></div>
     <div class="img-out">
       <img :src="imgSrc[0]" alt="" class="cus-ani-slideLeftIn ani-duration-1s">
     </div>

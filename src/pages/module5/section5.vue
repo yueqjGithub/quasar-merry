@@ -1,5 +1,6 @@
 <template>
   <div class="full-page page-container flex-col flex-jst-center flex-ali-center">
+    <div class="full-page click-content"></div>
     <div class="full-width cus-ani-fadeIn ani-duration-1s">
       <img :src="imgSrc" alt="" class="full-width">
     </div>

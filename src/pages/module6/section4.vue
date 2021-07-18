@@ -2,7 +2,9 @@
   <div class="full-page page-container flex-col flex-jst-center flex-ali-center">
     <div class="full-page click-content"></div>
     <div class="cont-out q-pa-md full-width relative-position flex-col flex-jst-start flex-ali-center cus-ani-slideRightIn ani-duration-05s">
-      <img :src="imgSrc" alt="" class="full-width cus-ani-slideTopIn ani-duration-05s ani-delay-05s">
+      <div class="show-img cus-ani-slideTopIn ani-duration-15s ani-delay-05s">
+        <img :src="imgSrc" alt="" class="full-width">
+      </div>
       <div class="full-width q-pa-lg relative-position flex-row flex-jst-center flex-ali-center">
         <img src="~assets/module6/m6s4p1.png" alt="" class="width-60 cus-ani-zoomIn ani-duration-1s">
         <div class="ax-pic">
@@ -36,6 +38,14 @@ export default {
 .cont-out {
   background: #ffffff;
   border-bottom: 3px solid #ffc2c2;
+  .show-img{
+    max-height: 55vh;
+    overflow: hidden;
+    width: 100%;
+    img{
+      width: 100%;
+    }
+  }
 }
 .ax-pic{
   width: 4vw;

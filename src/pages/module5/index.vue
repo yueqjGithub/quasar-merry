@@ -14,7 +14,8 @@
       <section4 v-else-if="step === 3" :img-list="imgList"></section4>
       <section5 v-else-if="step === 4" :img-list="imgList"></section5>
       <section6 v-else-if="step === 5" :img-list="imgList"></section6>
-      <section9 v-else-if="step === 6"></section9>
+      <section8 v-else-if="step === 6" :img-list="imgList"></section8>
+      <section9 v-else-if="step === 7"></section9>
     </transition>
   </q-page>
 </template>
@@ -28,6 +29,7 @@ import section3 from 'pages/module5/section3'
 import section4 from 'pages/module5/section4'
 import section5 from 'pages/module5/section5'
 import section6 from 'pages/module5/section6'
+import section8 from 'pages/module5/section8'
 import section9 from 'pages/module5/section9'
 export default {
   components: {
@@ -38,6 +40,7 @@ export default {
     section4,
     section5,
     section6,
+    section8,
     section9
   },
   data () {
@@ -56,7 +59,7 @@ export default {
     handlePan ({ evt, ...info }) { // 上下监听
       const vm = this
       if (info.direction === 'up' && info.distance.y > 2) {
-        vm.step < 6 && vm.step++
+        vm.step < 7 && vm.step++
       }
       if (info.direction === 'down' && info.distance.y > 2) {
         vm.step > 0 && vm.step--

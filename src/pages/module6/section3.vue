@@ -41,7 +41,7 @@ export default {
     background: #ffffff;
     border-bottom: 3px solid #ffc2c2;
     .img-out{
-      height: 45vw;
+      height: 55vw;
       overflow: hidden;
       img{
         width: 100%;

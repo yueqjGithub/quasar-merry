@@ -5,7 +5,7 @@
       <img src="~assets/module6/m6s1p1.png" alt="" class="width-40 cus-ani-fadeIn ani-duration-1s ani-delay-1s">
       <img src="~assets/module6/m6s1word.png" alt="" class="width-80 ma-row-md cus-ani-scaleX ani-duration-1s ani-delay-15s">
       <img src="~assets/module6/m6s1p2.png" alt="" class="width-60 ma-row-md cus-ani-slideRightIn ani-duration-05s ani-delay-2s">
-      <div class="width-60 flex-row flex-jst-start flex-ali-center cus-ani-slideRightIn ani-duration-05s ani-delay-25s">
+      <div class="full-width flex-row flex-jst-center flex-ali-center cus-ani-slideRightIn ani-duration-05s ani-delay-25s">
         <div class="font-28 m6-text-primary">{{manName}}</div>
         <img src="~assets/module6/m6s1p3.png" alt="" class="width-10 q-ma-lg">
         <div class="font-28 m6-text-primary">{{womanName}}</div>

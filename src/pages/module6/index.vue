@@ -15,7 +15,8 @@
       <section5 v-else-if="step === 4" :img-list="imgList"></section5>
       <section6 v-else-if="step === 5" :img-list="imgList"></section6>
       <section7 v-else-if="step === 6" :img-list="imgList"></section7>
-      <section9 v-else-if="step === 7"></section9>
+      <section8 v-else-if="step === 7" :img-list="imgList"></section8>
+      <section9 v-else-if="step === 8"></section9>
     </transition>
     <img src="~assets/module6/m6leaf1.png" alt="" class="leaf-1 m6-leaf cus-ani-slideTopIn ani-duration-1s ani-delay-15s" v-show="showleaf">
     <img src="~assets/module6/m6leaf2.png" alt="" class="leaf-2 m6-leaf cus-ani-slideRightIn ani-duration-1s ani-delay-2s" v-show="showleaf">
@@ -33,6 +34,7 @@ import section4 from 'pages/module6/section4'
 import section5 from 'pages/module6/section5'
 import section6 from 'pages/module6/section6'
 import section7 from 'pages/module6/section7'
+import section8 from 'pages/module6/section8'
 import section9 from 'pages/module6/section9'
 export default {
   components: {
@@ -44,6 +46,7 @@ export default {
     section5,
     section6,
     section7,
+    section8,
     section9
   },
   data () {
@@ -65,7 +68,7 @@ export default {
       const vm = this
       vm.showleaf = false
       if (info.direction === 'up' && info.distance.y > 2) {
-        vm.step < 7 && vm.step++
+        vm.step < 8 && vm.step++
       }
       if (info.direction === 'down' && info.distance.y > 2) {
         vm.step > 0 && vm.step--

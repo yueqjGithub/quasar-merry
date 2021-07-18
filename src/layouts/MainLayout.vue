@@ -23,7 +23,6 @@
 import { mapMutations, mapState } from 'vuex'
 import urls from '../api/urls'
 import messageBox from 'components/messageBox'
-// import dayjs from 'dayjs'
 export default {
   name: 'MainLayout',
   components: {
@@ -188,7 +187,7 @@ export default {
   right: .2rem;
   top: .2rem;
   width: .35rem;
-  z-index: 10;
+  z-index: 20;
   animation: wheel-rotate 2s linear infinite;
 }
 .fast-msg-out{
@@ -199,7 +198,7 @@ export default {
   position: fixed;
   right: .1rem;
   bottom: .8rem;
-  z-index: 9;
+  z-index: 20;
   img{
     width: 50%;
   }
