@@ -23,7 +23,7 @@
 import { mapMutations, mapState } from 'vuex'
 import urls from '../api/urls'
 import messageBox from 'components/messageBox'
-import dayjs from 'dayjs'
+// import dayjs from 'dayjs'
 export default {
   name: 'MainLayout',
   components: {
