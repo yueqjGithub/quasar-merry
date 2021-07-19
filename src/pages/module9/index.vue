@@ -3,8 +3,8 @@
     <my-loading :img-list="imgList" @loaded="loaded" v-if="!loadend"></my-loading>
     <transition
       appear
-      enter-active-class="cus-ani-flipInX ani-duration-15s"
-      leave-active-class="cus-ani-flipOutX ani-duration-1s"
+      enter-active-class="animated fadeIn"
+      leave-active-class="animated fadeOut"
       mode="out-in"
       v-if="loadend"
     >
@@ -23,14 +23,14 @@
 <script>
 import myLoading from '../../components/progress.vue'
 import { mapState } from 'vuex'
-import section1 from 'pages/module7/section1'
-import section2 from 'pages/module7/section2'
-import section3 from 'pages/module7/section3'
-import section4 from 'pages/module7/section4'
-import section5 from 'pages/module7/section5'
-import section6 from 'pages/module7/section6'
-import section8 from 'pages/module7/section8'
-import section9 from 'pages/module7/section9'
+import section1 from 'pages/module9/section1'
+import section2 from 'pages/module9/section2'
+import section3 from 'pages/module9/section3'
+import section4 from 'pages/module9/section4'
+import section5 from 'pages/module9/section5'
+import section6 from 'pages/module9/section6'
+import section8 from 'pages/module9/section8'
+import section9 from 'pages/module9/section9'
 export default {
   components: {
     myLoading,
@@ -76,40 +76,16 @@ export default {
 </script>
 <style lang="scss">
 .page-container{
-  background: url("~assets/module7/m7bg.jpg");
-  background-size: 100% 100%;
-  .m7-text-primary{
-    color: #d69241;
+  .m9-text-primary{
+    color: #62372e;
+  }
+  .m9-text-fs{
+    font-family: monospace;
   }
 }
 </style>
 <style lang="scss" scoped>
-.cus-ani-flipInX{
-  animation-name: cusFlipInX;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
-}
-.cus-ani-flipOutX{
-  animation-name: cusFlipOutX;
-  animation-timing-function: ease-out;
-  animation-fill-mode: forwards;
-}
-@keyframes cusFlipOutX {
-  from {
-    opacity: 1;
-    transform: rotateX(0deg);
-  }
-  to {
-    opacity: 0;
-    transform: rotateX(-90deg);
-  }
-}
-@keyframes cusFlipInX {
-  from {
-    transform: rotateX(90deg);
-  }
-  to {
-    transform: rotateX(0deg);
-  }
+.page-container{
+  background: #ffffff;
 }
 </style>

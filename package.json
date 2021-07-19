@@ -11,6 +11,7 @@
     "build:prod": "cross-env CUS_ENV=PROD_ENV quasar build"
   },
   "dependencies": {
+    "@quasar/cli": "^1.2.1",
     "@quasar/extras": "^1.0.0",
     "axios": "^0.21.1",
     "core-js": "^3.6.5",

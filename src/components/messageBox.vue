@@ -86,6 +86,7 @@ export default {
   position: fixed;
   left: .1rem;
   bottom: .8rem;
+  z-index: 7;
 }
 .message-item{
   color: white;
